@@ -23,11 +23,8 @@ except ImportError:
         "please declare environment variable 'SUMO_HOME'")
 
 import traci
-# the port used for communicating with the sumo instance
 
 #main execution loop to control each simulation step
-
-
 def run():
     """execute the TraCI control loop"""
     step = 0
@@ -193,17 +190,9 @@ def generate_routefile():
 if __name__ == "__main__":
     options = get_options()
 
-    # this script has been called from the command line. It will start sumo as a
-    # server, then connect and run
     if options.nogui:
-        sumoBinary = checkBinary('sumo')
+        traci.start(["sumo", "-c", "1-long-road.sumocfg"]) 
     else:
-        sumoBinary = checkBinary('sumo-gui')
-
-    # this is the normal way of using traci. sumo is started as a
-    # subprocess and then the python script connects and runs
-    # sumoProcess = subprocess.Popen([sumoBinary, "-c", "grid-1.sumocfg", "--tripinfo-output",
-    #                                 "tripinfo.xml", "--remote-port", str(PORT)], stdout=sys.stdout, stderr=sys.stderr)
-    traci.start(["sumo-gui", "-c", "1-long-road.sumocfg"]) 
+        traci.start(["sumo-gui", "-c", "1-long-road.sumocfg"]) 
+    
     run()
-    # sumoProcess.wait()
