@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Sat 28 Jan 19:41:32 2017 by Netedit Version 0.28.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netedit.exeConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="single-edge-3-lanes-right-bus-lanes.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="single-edge-3-lanes-right-bus-lanes.net.xml"/>
+    </output>
+
+    <processing>
+        <no-internal-links value="true"/>
+        <no-turnarounds value="true"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+        <junctions.corner-detail value="0"/>
+    </processing>
+
+</configuration>
+-->
+
+<net version="0.27" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="-63.75,62.41,126.51,62.53" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id="anti-clock-1" from="gneJ3" to="gneJ9" priority="1">
+        <lane id="anti-clock-1_0" index="0" allow="bus" disallow="private" speed="13.89" length="99.44" shape="-63.75,54.28 35.69,54.22"/>
+        <lane id="anti-clock-1_1" index="1" disallow="bus" speed="13.89" length="99.44" shape="-63.75,57.58 35.69,57.52"/>
+        <lane id="anti-clock-1_2" index="2" disallow="bus" speed="13.89" length="99.44" shape="-63.75,60.88 35.69,60.82"/>
+    </edge>
+    <edge id="anti-clock-2" from="gneJ9" to="gneJ4" priority="1">
+        <lane id="anti-clock-2_0" index="0" allow="bus" disallow="private" speed="13.89" length="90.82" shape="35.68,54.22 126.50,54.16"/>
+        <lane id="anti-clock-2_1" index="1" disallow="bus" speed="13.89" length="90.82" shape="35.69,57.52 126.51,57.46"/>
+        <lane id="anti-clock-2_2" index="2" disallow="bus" speed="13.89" length="90.82" shape="35.69,60.82 126.51,60.76"/>
+    </edge>
+    <edge id="clock-wise-1" from="gneJ8" to="gneJ3" priority="1">
+        <lane id="clock-wise-1_0" index="0" allow="bus" disallow="private" speed="13.89" length="97.54" shape="33.80,70.72 -63.74,70.78"/>
+        <lane id="clock-wise-1_1" index="1" disallow="bus" speed="13.89" length="97.54" shape="33.79,67.42 -63.75,67.48"/>
+        <lane id="clock-wise-1_2" index="2" disallow="bus" speed="13.89" length="97.54" shape="33.79,64.12 -63.75,64.18"/>
+    </edge>
+    <edge id="clock-wise-2" from="gneJ4" to="gneJ8" priority="1">
+        <lane id="clock-wise-2_0" index="0" allow="bus" disallow="private" speed="13.89" length="92.72" shape="126.52,70.66 33.80,70.72"/>
+        <lane id="clock-wise-2_1" index="1" disallow="bus" speed="13.89" length="92.72" shape="126.51,67.36 33.79,67.42"/>
+        <lane id="clock-wise-2_2" index="2" disallow="bus" speed="13.89" length="92.72" shape="126.51,64.06 33.79,64.12"/>
+    </edge>
+
+    <junction id="gneJ3" type="dead_end" x="-63.75" y="62.53" incLanes="clock-wise-1_0 clock-wise-1_1 clock-wise-1_2" intLanes="" shape="-63.75,62.48 -63.74,72.38 -63.75,62.58"/>
+    <junction id="gneJ4" type="dead_end" x="126.51" y="62.41" incLanes="anti-clock-2_0 anti-clock-2_1 anti-clock-2_2" intLanes="" shape="126.51,62.46 126.50,52.56 126.51,62.36"/>
+    <junction id="gneJ8" type="unregulated" x="33.79" y="62.47" incLanes="clock-wise-2_0 clock-wise-2_1 clock-wise-2_2" intLanes="" shape="33.80,72.32 33.79,62.52 33.80,72.32"/>
+    <junction id="gneJ9" type="unregulated" x="35.69" y="62.47" incLanes="anti-clock-1_0 anti-clock-1_1 anti-clock-1_2" intLanes="" shape="35.69,62.42 35.68,52.62 35.69,62.42">
+        <request index="0" response="000" foes="000"/>
+        <request index="1" response="000" foes="000"/>
+        <request index="2" response="000" foes="000"/>
+    </junction>
+
+    <connection from="anti-clock-1" to="anti-clock-2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="anti-clock-1" to="anti-clock-2" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="anti-clock-1" to="anti-clock-2" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from="clock-wise-2" to="clock-wise-1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="clock-wise-2" to="clock-wise-1" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="clock-wise-2" to="clock-wise-1" fromLane="2" toLane="2" dir="s" state="M"/>
+
+</net>
