@@ -1,0 +1,3 @@
+<additional>
+  <vType id="busType" maxSpeed="27" vClass="bus"/>
+</additional>

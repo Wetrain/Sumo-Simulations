@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Sat Feb 18 19:14:34 2017 by SUMO duarouter Version 0.28.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="grid-4.net.xml"/>
+        <additional-files value="bustype.add.xml"/>
+        <trip-files value="trips.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="busroutes.rou.xml"/>
+    </output>
+
+    <processing>
+        <ignore-errors value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="1500.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="busType" maxSpeed="27.00" vClass="bus"/>
+    <vehicle id="bus0" type="busType" depart="0.00">
+        <route edges="0/2to0/1 0/1to1/1 1/1to2/1 2/1to1/1"/>
+    </vehicle>
+    <vehicle id="bus1" type="busType" depart="20.00">
+        <route edges="1/1to1/0 1/0to2/0 2/0to1/0"/>
+    </vehicle>
+    <vehicle id="bus2" type="busType" depart="40.00">
+        <route edges="2/2to2/1 2/1to2/2 2/2to2/3 2/3to3/3"/>
+    </vehicle>
+    <vehicle id="bus3" type="busType" depart="60.00">
+        <route edges="2/3to3/3 3/3to2/3 2/3to1/3 1/3to1/2 1/2to0/2 0/2to1/2"/>
+    </vehicle>
+    <vehicle id="bus4" type="busType" depart="80.00">
+        <route edges="0/2to1/2 1/2to1/1"/>
+    </vehicle>
+    <vehicle id="bus5" type="busType" depart="100.00">
+        <route edges="1/0to0/0 0/0to0/1 0/1to0/2 0/2to1/2 1/2to2/2"/>
+    </vehicle>
+    <vehicle id="bus6" type="busType" depart="120.00">
+        <route edges="3/1to3/0 3/0to2/0 2/0to1/0 1/0to1/1 1/1to0/1 0/1to0/2 0/2to0/1"/>
+    </vehicle>
+    <vehicle id="bus7" type="busType" depart="140.00">
+        <route edges="2/1to2/0 2/0to1/0 1/0to1/1 1/1to0/1 0/1to0/2 0/2to0/1"/>
+    </vehicle>
+    <vehicle id="bus8" type="busType" depart="160.00">
+        <route edges="3/0to3/1 3/1to2/1 2/1to2/2 2/2to2/3"/>
+    </vehicle>
+    <vehicle id="bus9" type="busType" depart="180.00">
+        <route edges="3/2to3/1 3/1to2/1 2/1to1/1 1/1to0/1 0/1to0/2 0/2to0/3 0/3to1/3"/>
+    </vehicle>
+    <vehicle id="bus10" type="busType" depart="200.00">
+        <route edges="3/1to3/0 3/0to3/1 3/1to3/2 3/2to3/3 3/3to3/2"/>
+    </vehicle>
+    <vehicle id="bus11" type="busType" depart="220.00">
+        <route edges="1/1to0/1 0/1to0/2 0/2to1/2 1/2to2/2 2/2to1/2"/>
+    </vehicle>
+    <vehicle id="bus12" type="busType" depart="240.00">
+        <route edges="1/3to1/2 1/2to1/3 1/3to2/3 2/3to3/3"/>
+    </vehicle>
+    <vehicle id="bus13" type="busType" depart="260.00">
+        <route edges="0/2to0/3 0/3to0/2 0/2to0/1 0/1to0/0 0/0to1/0"/>
+    </vehicle>
+    <vehicle id="bus14" type="busType" depart="280.00">
+        <route edges="1/3to1/2 1/2to0/2 0/2to0/1 0/1to0/2"/>
+    </vehicle>
+    <vehicle id="bus15" type="busType" depart="300.00">
+        <route edges="1/1to0/1 0/1to1/1 1/1to2/1"/>
+    </vehicle>
+    <vehicle id="bus16" type="busType" depart="320.00">
+        <route edges="0/0to0/1 0/1to0/2 0/2to1/2 1/2to1/3 1/3to1/2"/>
+    </vehicle>
+    <vehicle id="bus17" type="busType" depart="340.00">
+        <route edges="2/2to1/2 1/2to2/2 2/2to3/2"/>
+    </vehicle>
+    <vehicle id="bus18" type="busType" depart="360.00">
+        <route edges="3/2to2/2 2/2to1/2 1/2to2/2"/>
+    </vehicle>
+    <vehicle id="bus19" type="busType" depart="380.00">
+        <route edges="0/0to0/1 0/1to0/2 0/2to1/2 1/2to1/3 1/3to2/3 2/3to3/3 3/3to2/3"/>
+    </vehicle>
+    <vehicle id="bus20" type="busType" depart="400.00">
+        <route edges="3/0to2/0 2/0to2/1 2/1to2/2"/>
+    </vehicle>
+    <vehicle id="bus21" type="busType" depart="420.00">
+        <route edges="0/0to0/1 0/1to1/1 1/1to2/1 2/1to3/1 3/1to3/0"/>
+    </vehicle>
+    <vehicle id="bus22" type="busType" depart="440.00">
+        <route edges="1/0to0/0 0/0to0/1 0/1to0/2 0/2to1/2 1/2to1/3 1/3to2/3 2/3to3/3 3/3to2/3"/>
+    </vehicle>
+    <vehicle id="bus23" type="busType" depart="460.00">
+        <route edges="0/2to1/2 1/2to1/1 1/1to2/1 2/1to2/2"/>
+    </vehicle>
+    <vehicle id="bus24" type="busType" depart="480.00">
+        <route edges="2/2to3/2 3/2to2/2 2/2to1/2 1/2to1/1 1/1to1/0 1/0to2/0"/>
+    </vehicle>
+    <vehicle id="bus25" type="busType" depart="500.00">
+        <route edges="2/2to2/1 2/1to1/1 1/1to1/0 1/0to2/0"/>
+    </vehicle>
+    <vehicle id="bus26" type="busType" depart="520.00">
+        <route edges="2/2to2/1 2/1to3/1"/>
+    </vehicle>
+    <vehicle id="bus27" type="busType" depart="540.00">
+        <route edges="1/0to1/1 1/1to1/0 1/0to2/0 2/0to2/1"/>
+    </vehicle>
+    <vehicle id="bus28" type="busType" depart="560.00">
+        <route edges="1/3to2/3 2/3to2/2 2/2to2/1 2/1to2/0 2/0to2/1"/>
+    </vehicle>
+    <vehicle id="bus29" type="busType" depart="580.00">
+        <route edges="2/0to3/0 3/0to2/0 2/0to1/0 1/0to1/1"/>
+    </vehicle>
+    <vehicle id="bus30" type="busType" depart="600.00">
+        <route edges="2/0to2/1 2/1to1/1 1/1to1/0 1/0to1/1"/>
+    </vehicle>
+    <vehicle id="bus31" type="busType" depart="620.00">
+        <route edges="0/0to1/0 1/0to1/1 1/1to2/1 2/1to1/1"/>
+    </vehicle>
+    <vehicle id="bus32" type="busType" depart="640.00">
+        <route edges="2/0to2/1 2/1to1/1 1/1to1/0 1/0to1/1"/>
+    </vehicle>
+    <vehicle id="bus33" type="busType" depart="660.00">
+        <route edges="3/1to3/0 3/0to2/0 2/0to1/0 1/0to1/1 1/1to1/2 1/2to1/3 1/3to0/3"/>
+    </vehicle>
+    <vehicle id="bus34" type="busType" depart="680.00">
+        <route edges="1/1to1/0 1/0to2/0 2/0to2/1"/>
+    </vehicle>
+    <vehicle id="bus35" type="busType" depart="700.00">
+        <route edges="0/3to0/2 0/2to1/2 1/2to0/2"/>
+    </vehicle>
+    <vehicle id="bus36" type="busType" depart="720.00">
+        <route edges="1/1to2/1 2/1to2/2 2/2to2/3 2/3to3/3 3/3to3/2"/>
+    </vehicle>
+    <vehicle id="bus37" type="busType" depart="740.00">
+        <route edges="3/2to3/3 3/3to3/2 3/2to3/1 3/1to3/2"/>
+    </vehicle>
+    <vehicle id="bus38" type="busType" depart="760.00">
+        <route edges="1/1to1/2 1/2to1/1 1/1to1/0 1/0to2/0 2/0to3/0 3/0to2/0"/>
+    </vehicle>
+    <vehicle id="bus39" type="busType" depart="780.00">
+        <route edges="0/2to0/1 0/1to1/1 1/1to2/1"/>
+    </vehicle>
+    <vehicle id="bus40" type="busType" depart="800.00">
+        <route edges="2/2to2/3 2/3to2/2 2/2to2/1 2/1to2/0 2/0to2/1"/>
+    </vehicle>
+    <vehicle id="bus41" type="busType" depart="820.00">
+        <route edges="1/3to2/3"/>
+    </vehicle>
+    <vehicle id="bus42" type="busType" depart="840.00">
+        <route edges="0/3to0/2 0/2to0/1 0/1to1/1 1/1to1/0 1/0to2/0 2/0to2/1"/>
+    </vehicle>
+    <vehicle id="bus43" type="busType" depart="860.00">
+        <route edges="1/2to1/3 1/3to1/2 1/2to0/2 0/2to0/1 0/1to0/0 0/0to1/0"/>
+    </vehicle>
+    <vehicle id="bus44" type="busType" depart="880.00">
+        <route edges="1/1to1/0 1/0to1/1 1/1to1/2 1/2to2/2 2/2to1/2"/>
+    </vehicle>
+    <vehicle id="bus45" type="busType" depart="900.00">
+        <route edges="2/1to2/0 2/0to2/1 2/1to2/2 2/2to2/3 2/3to3/3 3/3to3/2"/>
+    </vehicle>
+    <vehicle id="bus46" type="busType" depart="920.00">
+        <route edges="2/1to2/0 2/0to3/0 3/0to2/0"/>
+    </vehicle>
+    <vehicle id="bus47" type="busType" depart="940.00">
+        <route edges="3/0to2/0 2/0to1/0 1/0to1/1 1/1to0/1 0/1to0/2 0/2to0/3"/>
+    </vehicle>
+    <vehicle id="bus48" type="busType" depart="960.00">
+        <route edges="2/2to2/3 2/3to1/3 1/3to1/2 1/2to1/1 1/1to1/0 1/0to0/0"/>
+    </vehicle>
+    <vehicle id="bus49" type="busType" depart="980.00">
+        <route edges="3/1to3/2 3/2to2/2 2/2to2/1 2/1to2/0"/>
+    </vehicle>
+    <vehicle id="bus50" type="busType" depart="1000.00">
+        <route edges="1/1to2/1 2/1to2/0"/>
+    </vehicle>
+    <vehicle id="bus51" type="busType" depart="1020.00">
+        <route edges="0/3to0/2 0/2to1/2 1/2to1/3 1/3to1/2"/>
+    </vehicle>
+    <vehicle id="bus52" type="busType" depart="1040.00">
+        <route edges="0/0to0/1 0/1to0/2 0/2to1/2 1/2to1/3 1/3to2/3 2/3to3/3 3/3to3/2"/>
+    </vehicle>
+    <vehicle id="bus53" type="busType" depart="1060.00">
+        <route edges="1/3to1/2 1/2to0/2 0/2to0/1 0/1to0/2"/>
+    </vehicle>
+    <vehicle id="bus54" type="busType" depart="1080.00">
+        <route edges="2/0to2/1 2/1to2/2 2/2to2/3 2/3to3/3 3/3to2/3"/>
+    </vehicle>
+    <vehicle id="bus55" type="busType" depart="1100.00">
+        <route edges="3/1to3/0 3/0to2/0 2/0to1/0 1/0to1/1 1/1to0/1"/>
+    </vehicle>
+    <vehicle id="bus56" type="busType" depart="1120.00">
+        <route edges="1/2to1/3 1/3to2/3 2/3to2/2"/>
+    </vehicle>
+    <vehicle id="bus57" type="busType" depart="1140.00">
+        <route edges="0/2to0/1 0/1to0/2 0/2to1/2 1/2to2/2 2/2to2/3"/>
+    </vehicle>
+    <vehicle id="bus58" type="busType" depart="1160.00">
+        <route edges="1/0to0/0 0/0to0/1 0/1to0/2 0/2to1/2 1/2to2/2"/>
+    </vehicle>
+    <vehicle id="bus59" type="busType" depart="1180.00">
+        <route edges="1/3to2/3 2/3to1/3 1/3to1/2 1/2to2/2"/>
+    </vehicle>
+    <vehicle id="bus60" type="busType" depart="1200.00">
+        <route edges="1/2to2/2 2/2to1/2 1/2to1/1 1/1to1/0 1/0to2/0"/>
+    </vehicle>
+    <vehicle id="bus61" type="busType" depart="1220.00">
+        <route edges="2/0to2/1 2/1to1/1 1/1to1/2 1/2to1/3 1/3to1/2"/>
+    </vehicle>
+    <vehicle id="bus62" type="busType" depart="1240.00">
+        <route edges="3/3to2/3 2/3to2/2 2/2to1/2"/>
+    </vehicle>
+    <vehicle id="bus63" type="busType" depart="1260.00">
+        <route edges="1/2to2/2 2/2to1/2 1/2to1/1 1/1to1/0 1/0to1/1"/>
+    </vehicle>
+    <vehicle id="bus64" type="busType" depart="1280.00">
+        <route edges="2/0to1/0 1/0to1/1 1/1to1/0"/>
+    </vehicle>
+    <vehicle id="bus65" type="busType" depart="1300.00">
+        <route edges="1/2to2/2 2/2to2/1 2/1to2/2"/>
+    </vehicle>
+    <vehicle id="bus66" type="busType" depart="1320.00">
+        <route edges="3/2to2/2 2/2to1/2 1/2to0/2 0/2to0/1 0/1to0/0 0/0to0/1"/>
+    </vehicle>
+    <vehicle id="bus67" type="busType" depart="1340.00">
+        <route edges="1/3to2/3 2/3to2/2 2/2to2/1 2/1to3/1"/>
+    </vehicle>
+    <vehicle id="bus68" type="busType" depart="1360.00">
+        <route edges="0/2to1/2 1/2to0/2 0/2to0/1 0/1to0/2"/>
+    </vehicle>
+    <vehicle id="bus69" type="busType" depart="1380.00">
+        <route edges="2/1to2/0 2/0to2/1 2/1to2/2 2/2to2/3"/>
+    </vehicle>
+    <vehicle id="bus70" type="busType" depart="1400.00">
+        <route edges="2/1to3/1 3/1to2/1 2/1to1/1 1/1to0/1 0/1to0/0 0/0to1/0"/>
+    </vehicle>
+    <vehicle id="bus71" type="busType" depart="1420.00">
+        <route edges="1/3to2/3 2/3to3/3 3/3to3/2"/>
+    </vehicle>
+    <vehicle id="bus72" type="busType" depart="1440.00">
+        <route edges="0/3to1/3 1/3to1/2 1/2to1/1 1/1to2/1 2/1to3/1 3/1to3/0"/>
+    </vehicle>
+    <vehicle id="bus73" type="busType" depart="1460.00">
+        <route edges="0/2to1/2 1/2to1/3 1/3to0/3"/>
+    </vehicle>
+    <vehicle id="bus74" type="busType" depart="1480.00">
+        <route edges="3/0to3/1 3/1to2/1 2/1to2/2 2/2to2/3 2/3to3/3"/>
+    </vehicle>
+</routes>

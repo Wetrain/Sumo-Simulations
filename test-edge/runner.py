@@ -141,6 +141,8 @@ def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
                          default=False, help="run the commandline version of sumo")
+    optParser.add_option("--algorithm", action="store_true",
+                         default=False, help="run vanilla sumo")
     options, args = optParser.parse_args()
     return options
 
@@ -190,9 +192,17 @@ def generate_routefile():
 if __name__ == "__main__":
     options = get_options()
 
-    if options.nogui:
-        traci.start(["sumo", "-c", "1-long-road.sumocfg"]) 
-    else:
-        traci.start(["sumo-gui", "-c", "1-long-road.sumocfg"]) 
-    
-    run()
+    if options.algorithm:
+        if options.nogui:
+            traci.start(["sumo", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-no-algorithm-tripinfo.xml", "--seed", "50"]) 
+        else:
+            traci.start(["sumo-gui", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-no-algorithm-tripinfo.xml", "--seed", "50"])
+
+    elif not options.algorithm:
+
+        if options.nogui:
+            traci.start(["sumo", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-algorithm-tripinfo.xml", "--seed", "50"]) 
+        else:
+            traci.start(["sumo-gui", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-algorithm-tripinfo.xml", "--seed", "50"]) 
+
+        run()
