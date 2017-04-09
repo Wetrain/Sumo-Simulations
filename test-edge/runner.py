@@ -21,17 +21,17 @@ try:
 except ImportError:
     sys.exit(
         "please declare environment variable 'SUMO_HOME'")
-
 import traci
 
 #main execution loop to control each simulation step
-def run():
+def run(netfile, algorithm=False):
     """execute the TraCI control loop"""
     step = 0
 
     #parse the network file to improve performance when retrieving lanes
-    NET_FILE = 'single-edge-3-lanes-right-bus-lanes.net.xml'
+    NET_FILE = netfile
     NET = sumolib.net.readNet(NET_FILE)
+
     #get the names of each road/"edge"
     EDGE_IDS = NET.getEdges()
 
@@ -39,36 +39,46 @@ def run():
     # get over-writen
     global_edge_lanes = defaultdict(list)
     global_priority_lanes = defaultdict(list)
+    global_edge_vehicles = defaultdict(list)
+
     for edge in EDGE_IDS:
         edge_lanes = [ln.getID() for ln in sumolib.net.Edge.getLanes(edge)]
         global_edge_lanes[edge.getID()].append(edge_lanes)
         global_priority_lanes[edge.getID()].append(get_priority_lanes(edge_lanes))
+        global_edge_vehicles[edge.getID()].append([])
 
     while traci.simulation.getMinExpectedNumber() > 0:
+        print("Number of steps {0}".format(traci.simulation.getMinExpectedNumber()))
         # simulate congested road network until a valid congestion value can be
         # figure out
-        for edge in EDGE_IDS:
-            #lanes
-            edge_lanes = global_edge_lanes[edge.getID()][0]
-            priority_lanes = global_priority_lanes[edge.getID()][0]# hack to retrieve the actual list from the dict
-            non_priority_lanes = set(edge_lanes) - set(priority_lanes)
-            #vehicles
-            edge_vehicles = traci.edge.getLastStepVehicleIDs(edge.getID())
-            #perform cognitive radio steps
-            if detect_priority_vehicle(priority_lanes):
-                disable_priority_access(priority_lanes)
-                clean_priority_lanes(priority_lanes)
-                update_edge_travel_time(edge.getID())
-                update_vehicle_travel_time(edge_vehicles)
-            else:
-                # simulate_congestion(non_priority_lanes, 2)
-                enable_priority_access(priority_lanes)
-                update_edge_travel_time(edge.getID())
-                update_vehicle_travel_time(edge_vehicles)
+        if algorithm:
+            for edge in EDGE_IDS:
+                #lanes
+                # '[0]' to retrieve the actual list from the dict
+                edge_lanes = global_edge_lanes[edge.getID()][0]
+                priority_lanes = global_priority_lanes[edge.getID()][0]
+                non_priority_lanes = set(edge_lanes) - set(priority_lanes)
+                #vehicles
+                edge_vehicles = traci.edge.getLastStepVehicleIDs(edge.getID())
+
+                if global_edge_vehicles[edge.getID()] != None and global_edge_vehicles[edge.getID()] != edge_vehicles:
+                    global_edge_vehicles[edge.getID()] = edge_vehicles
+                    #perform cognitive radio steps
+                    if detect_priority_vehicle(priority_lanes):
+                        disable_priority_access(priority_lanes)
+                        clean_priority_lanes(priority_lanes)
+                        update_edge_travel_time(edge.getID())
+                        update_vehicle_travel_time(edge_vehicles)
+                    elif get_priority_lanes(edge_lanes) != []:
+                        enable_priority_access(priority_lanes)
+                        update_edge_travel_time(edge.getID())
+                        update_vehicle_travel_time(edge_vehicles)
         traci.simulationStep()
         step += 1
+        print("Current step {0}".format(step))
     traci.close()
     sys.stdout.flush()
+
 
 def detect_priority_vehicle(priority_lanes):
     priority_types = set(['bus', 'emergency', 'taxi'])
@@ -192,17 +202,16 @@ def generate_routefile():
 if __name__ == "__main__":
     options = get_options()
 
-    if options.algorithm:
-        if options.nogui:
-            traci.start(["sumo", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-no-algorithm-tripinfo.xml", "--seed", "50"]) 
+    for i in range(3):
+        output_file = 'grid-4-ouput'
+        if options.algorithm:
+            output_file += '-algorithm'
         else:
-            traci.start(["sumo-gui", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-no-algorithm-tripinfo.xml", "--seed", "50"])
-
-    elif not options.algorithm:
-
+            output_file += '-no-algorithm'
+        output_file += '-{0}.xml'.format(str(i))
         if options.nogui:
-            traci.start(["sumo", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-algorithm-tripinfo.xml", "--seed", "50"]) 
+            traci.start(["sumo", "-c", "1-long-road.sumocfg", "--tripinfo-output", output_file, "--seed", str(i)]) 
+            run('single-edge-3-lanes-right-bus-lanes.net.xml', options.algorithm)
         else:
-            traci.start(["sumo-gui", "-c", "1-long-road.sumocfg", "--tripinfo-output", "single-edge-algorithm-tripinfo.xml", "--seed", "50"]) 
-
-        run()
+            traci.start(["sumo-gui", "-c", "1-long-road.sumocfg", "--tripinfo-output", output_file, "--seed", str(i)])
+            run('single-edge-3-lanes-right-bus-lanes.net.xml', options.algorithm) 

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- generated on 2017-03-30 20:20:23.870466 by $Id: randomTrips.py 21557 2016-09-28 10:43:52Z luecken $
+  options: <doubleminus>net-file=abstract.net.xml <doubleminus>trip-attributes=type="busType" <doubleminus>additional-file bustype.add.xml <doubleminus>edge-permission bus -r busroutes.rou.xml -p 20 -e 600
+-->
+<trips>
+    <trip id="0" depart="0.00" from="7" to="123" type="busType"/>
+    <trip id="1" depart="20.00" from="-117" to="379" type="busType"/>
+    <trip id="2" depart="40.00" from="-1057" to="517" type="busType"/>
+    <trip id="3" depart="60.00" from="-379" to="19" type="busType"/>
+    <trip id="4" depart="80.00" from="326" to="696" type="busType"/>
+    <trip id="5" depart="100.00" from="-613" to="-19" type="busType"/>
+    <trip id="6" depart="120.00" from="116" to="365" type="busType"/>
+    <trip id="7" depart="140.00" from="326" to="38" type="busType"/>
+    <trip id="8" depart="160.00" from="492" to="381" type="busType"/>
+    <trip id="9" depart="180.00" from="-612" to="210" type="busType"/>
+    <trip id="10" depart="200.00" from="338" to="579" type="busType"/>
+    <trip id="11" depart="220.00" from="-608" to="840" type="busType"/>
+    <trip id="12" depart="240.00" from="642" to="325" type="busType"/>
+    <trip id="13" depart="260.00" from="-11" to="-356" type="busType"/>
+    <trip id="14" depart="280.00" from="-570" to="125" type="busType"/>
+    <trip id="15" depart="300.00" from="585" to="3" type="busType"/>
+    <trip id="16" depart="320.00" from="-732" to="1011" type="busType"/>
+    <trip id="17" depart="340.00" from="-326" to="569" type="busType"/>
+    <trip id="18" depart="360.00" from="123" to="-15" type="busType"/>
+    <trip id="19" depart="380.00" from="577" to="-356" type="busType"/>
+    <trip id="20" depart="400.00" from="-597" to="686" type="busType"/>
+    <trip id="21" depart="420.00" from="-623" to="504" type="busType"/>
+    <trip id="22" depart="440.00" from="123" to="505" type="busType"/>
+    <trip id="23" depart="460.00" from="-1057" to="344" type="busType"/>
+    <trip id="24" depart="480.00" from="-1011" to="674" type="busType"/>
+    <trip id="25" depart="500.00" from="625" to="734" type="busType"/>
+    <trip id="26" depart="520.00" from="650" to="336" type="busType"/>
+    <trip id="27" depart="540.00" from="505" to="592" type="busType"/>
+    <trip id="28" depart="560.00" from="-684" to="614" type="busType"/>
+    <trip id="29" depart="580.00" from="-679" to="-19" type="busType"/>
+</trips>

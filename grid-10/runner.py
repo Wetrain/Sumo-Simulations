@@ -40,6 +40,7 @@ def run(netfile, algorithm=False):
     global_edge_lanes = defaultdict(list)
     global_priority_lanes = defaultdict(list)
     global_edge_vehicles = defaultdict(list)
+
     for edge in EDGE_IDS:
         edge_lanes = [ln.getID() for ln in sumolib.net.Edge.getLanes(edge)]
         global_edge_lanes[edge.getID()].append(edge_lanes)
@@ -47,18 +48,20 @@ def run(netfile, algorithm=False):
         global_edge_vehicles[edge.getID()].append([])
 
     while traci.simulation.getMinExpectedNumber() > 0:
+        print("Number of steps {0}".format(traci.simulation.getMinExpectedNumber()))
         # simulate congested road network until a valid congestion value can be
         # figure out
         if algorithm:
             for edge in EDGE_IDS:
                 #lanes
-                # '[0]'' hack to retrieve the actual list from the dict
+                # '[0]' to retrieve the actual list from the dict
                 edge_lanes = global_edge_lanes[edge.getID()][0]
                 priority_lanes = global_priority_lanes[edge.getID()][0]
                 non_priority_lanes = set(edge_lanes) - set(priority_lanes)
                 #vehicles
                 edge_vehicles = traci.edge.getLastStepVehicleIDs(edge.getID())
-                if edge_vehicles != global_edge_vehicles[edge.getID()][0]:
+
+                if global_edge_vehicles[edge.getID()] != None and global_edge_vehicles[edge.getID()] != edge_vehicles:
                     global_edge_vehicles[edge.getID()] = edge_vehicles
                     #perform cognitive radio steps
                     if detect_priority_vehicle(priority_lanes):
@@ -66,13 +69,13 @@ def run(netfile, algorithm=False):
                         clean_priority_lanes(priority_lanes)
                         update_edge_travel_time(edge.getID())
                         update_vehicle_travel_time(edge_vehicles)
-                    else:
-                        # simulate_congestion(non_priority_lanes, 2)
+                    elif get_priority_lanes(edge_lanes) != []:
                         enable_priority_access(priority_lanes)
                         update_edge_travel_time(edge.getID())
                         update_vehicle_travel_time(edge_vehicles)
         traci.simulationStep()
         step += 1
+        print("Current step {0}".format(step))
     traci.close()
     sys.stdout.flush()
 

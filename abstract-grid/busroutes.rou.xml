@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thu Mar 30 20:20:23 2017 by SUMO duarouter Version 0.28.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="abstract.net.xml"/>
+        <additional-files value="bustype.add.xml"/>
+        <trip-files value="trips.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="busroutes.rou.xml"/>
+    </output>
+
+    <processing>
+        <ignore-errors value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="600.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="busType" maxSpeed="27.00" vClass="bus"/>
+    <vehicle id="bus0" type="busType" depart="0.00">
+        <route edges="7 -7 9 19 123"/>
+    </vehicle>
+    <vehicle id="bus1" type="busType" depart="20.00">
+        <route edges="-117 117 313 -326 -121 125 344 379"/>
+    </vehicle>
+    <vehicle id="bus2" type="busType" depart="40.00">
+        <route edges="-1057 -523 517"/>
+    </vehicle>
+    <vehicle id="bus3" type="busType" depart="60.00">
+        <route edges="-379 -344 -125 -19 19"/>
+    </vehicle>
+    <vehicle id="bus4" type="busType" depart="80.00">
+        <route edges="326 -116 -13 -3 11 696"/>
+    </vehicle>
+    <vehicle id="bus5" type="busType" depart="100.00">
+        <route edges="-613 -579 -383 -128 -25 19 -19"/>
+    </vehicle>
+    <vehicle id="bus6" type="busType" depart="120.00">
+        <route edges="116 -326 -121 125 344 365"/>
+    </vehicle>
+    <vehicle id="bus7" type="busType" depart="140.00">
+        <route edges="326 -116 38"/>
+    </vehicle>
+    <vehicle id="bus8" type="busType" depart="160.00">
+        <route edges="492 -379 -349 -381 381"/>
+    </vehicle>
+    <vehicle id="bus9" type="busType" depart="180.00">
+        <route edges="-612 -577 -383 -128 210"/>
+    </vehicle>
+    <vehicle id="bus10" type="busType" depart="200.00">
+        <route edges="338 -338 -123 -19 25 128 383 579"/>
+    </vehicle>
+    <vehicle id="bus11" type="busType" depart="220.00">
+        <route edges="-608 612 1005 -1029 -728 -11 3 15 119 332 592 642 840"/>
+    </vehicle>
+    <vehicle id="bus12" type="busType" depart="240.00">
+        <route edges="642 -642 -592 -332 -119 117 325"/>
+    </vehicle>
+    <vehicle id="bus13" type="busType" depart="260.00">
+        <route edges="-11 7 356 -356"/>
+    </vehicle>
+    <vehicle id="bus14" type="busType" depart="280.00">
+        <route edges="-570 570 -125 125"/>
+    </vehicle>
+    <vehicle id="bus15" type="busType" depart="300.00">
+        <route edges="585 -585 -210 -25 -9 3"/>
+    </vehicle>
+    <vehicle id="bus16" type="busType" depart="320.00">
+        <route edges="-732 -625 -319 -117 -15 -3 11 728 1029 -1005 1011"/>
+    </vehicle>
+    <vehicle id="bus17" type="busType" depart="340.00">
+        <route edges="-326 -121 125 344 365 569"/>
+    </vehicle>
+    <vehicle id="bus18" type="busType" depart="360.00">
+        <route edges="123 338 517 -588 -325 -117 -15"/>
+    </vehicle>
+    <vehicle id="bus19" type="busType" depart="380.00">
+        <route edges="577 -577 -383 -128 138 348 -356"/>
+    </vehicle>
+    <vehicle id="bus20" type="busType" depart="400.00">
+        <route edges="-597 597 686"/>
+    </vehicle>
+    <vehicle id="bus21" type="busType" depart="420.00">
+        <route edges="-623 -319 325 588 -517 -338 336 504"/>
+    </vehicle>
+    <vehicle id="bus22" type="busType" depart="440.00">
+        <route edges="123 338 505"/>
+    </vehicle>
+    <vehicle id="bus23" type="busType" depart="460.00">
+        <route edges="-1057 -523 -338 -123 125 344"/>
+    </vehicle>
+    <vehicle id="bus24" type="busType" depart="480.00">
+        <route edges="-1011 1005 -1029 -728 -11 3 15 119 332 592 674"/>
+    </vehicle>
+    <vehicle id="bus25" type="busType" depart="500.00">
+        <route edges="625 734"/>
+    </vehicle>
+    <vehicle id="bus26" type="busType" depart="520.00">
+        <route edges="650 -650 -592 -332 -119 117 325 588 -517 -338 336"/>
+    </vehicle>
+    <vehicle id="bus27" type="busType" depart="540.00">
+        <route edges="505 -505 517 -588 -325 -117 119 332 592"/>
+    </vehicle>
+    <vehicle id="bus28" type="busType" depart="560.00">
+        <route edges="-684 -597 -505 -338 -123 -19 25 128 383 579 614"/>
+    </vehicle>
+    <vehicle id="bus29" type="busType" depart="580.00">
+        <route edges="-679 -7 9 19 -19"/>
+    </vehicle>
+</routes>

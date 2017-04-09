@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thu Mar 30 20:20:23 2017 by SUMO duarouter Version 0.28.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="abstract.net.xml"/>
+        <additional-files value="bustype.add.xml"/>
+        <trip-files value="trips.trips.xml"/>
+    </input>
+
+    <output>
+        <output-file value="busroutes.rou.xml"/>
+    </output>
+
+    <processing>
+        <ignore-errors value="true"/>
+    </processing>
+
+    <time>
+        <begin value="0"/>
+        <end value="600.0"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="busType" maxSpeed="27.00" vClass="bus"/>
+    <vehicle id="0" type="busType" depart="0.00">
+        <routeDistribution last="0">
+            <route cost="59.93" probability="1.00000000" edges="7 -7 9 19 123"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="1" type="busType" depart="20.00">
+        <routeDistribution last="0">
+            <route cost="70.99" probability="1.00000000" edges="-117 117 313 -326 -121 125 344 379"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="2" type="busType" depart="40.00">
+        <routeDistribution last="0">
+            <route cost="39.60" probability="1.00000000" edges="-1057 -523 517"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="3" type="busType" depart="60.00">
+        <routeDistribution last="0">
+            <route cost="52.25" probability="1.00000000" edges="-379 -344 -125 -19 19"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="4" type="busType" depart="80.00">
+        <routeDistribution last="0">
+            <route cost="54.39" probability="1.00000000" edges="326 -116 -13 -3 11 696"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="5" type="busType" depart="100.00">
+        <routeDistribution last="0">
+            <route cost="77.99" probability="1.00000000" edges="-613 -579 -383 -128 -25 19 -19"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="6" type="busType" depart="120.00">
+        <routeDistribution last="0">
+            <route cost="62.83" probability="1.00000000" edges="116 -326 -121 125 344 365"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="7" type="busType" depart="140.00">
+        <routeDistribution last="0">
+            <route cost="26.74" probability="1.00000000" edges="326 -116 38"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="8" type="busType" depart="160.00">
+        <routeDistribution last="0">
+            <route cost="47.54" probability="1.00000000" edges="492 -379 -349 -381 381"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="9" type="busType" depart="180.00">
+        <routeDistribution last="0">
+            <route cost="48.31" probability="1.00000000" edges="-612 -577 -383 -128 210"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="10" type="busType" depart="200.00">
+        <routeDistribution last="0">
+            <route cost="76.56" probability="1.00000000" edges="338 -338 -123 -19 25 128 383 579"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="11" type="busType" depart="220.00">
+        <routeDistribution last="0">
+            <route cost="137.80" probability="1.00000000" edges="-608 612 1005 -1029 -728 -11 3 15 119 332 592 642 840"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="12" type="busType" depart="240.00">
+        <routeDistribution last="0">
+            <route cost="67.65" probability="1.00000000" edges="642 -642 -592 -332 -119 117 325"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="13" type="busType" depart="260.00">
+        <routeDistribution last="0">
+            <route cost="43.43" probability="1.00000000" edges="-11 7 356 -356"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="14" type="busType" depart="280.00">
+        <routeDistribution last="0">
+            <route cost="40.21" probability="1.00000000" edges="-570 570 -125 125"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="15" type="busType" depart="300.00">
+        <routeDistribution last="0">
+            <route cost="67.38" probability="1.00000000" edges="585 -585 -210 -25 -9 3"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="16" type="busType" depart="320.00">
+        <routeDistribution last="0">
+            <route cost="113.94" probability="1.00000000" edges="-732 -625 -319 -117 -15 -3 11 728 1029 -1005 1011"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="17" type="busType" depart="340.00">
+        <routeDistribution last="0">
+            <route cost="66.33" probability="1.00000000" edges="-326 -121 125 344 365 569"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="18" type="busType" depart="360.00">
+        <routeDistribution last="0">
+            <route cost="61.63" probability="1.00000000" edges="123 338 517 -588 -325 -117 -15"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="19" type="busType" depart="380.00">
+        <routeDistribution last="0">
+            <route cost="74.47" probability="1.00000000" edges="577 -577 -383 -128 138 348 -356"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="20" type="busType" depart="400.00">
+        <routeDistribution last="0">
+            <route cost="23.38" probability="1.00000000" edges="-597 597 686"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="21" type="busType" depart="420.00">
+        <routeDistribution last="0">
+            <route cost="80.52" probability="1.00000000" edges="-623 -319 325 588 -517 -338 336 504"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="22" type="busType" depart="440.00">
+        <routeDistribution last="0">
+            <route cost="28.30" probability="1.00000000" edges="123 338 505"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="23" type="busType" depart="460.00">
+        <routeDistribution last="0">
+            <route cost="64.22" probability="1.00000000" edges="-1057 -523 -338 -123 125 344"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="24" type="busType" depart="480.00">
+        <routeDistribution last="0">
+            <route cost="110.93" probability="1.00000000" edges="-1011 1005 -1029 -728 -11 3 15 119 332 592 674"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="25" type="busType" depart="500.00">
+        <routeDistribution last="0">
+            <route cost="22.33" probability="1.00000000" edges="625 734"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="26" type="busType" depart="520.00">
+        <routeDistribution last="0">
+            <route cost="96.28" probability="1.00000000" edges="650 -650 -592 -332 -119 117 325 588 -517 -338 336"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="27" type="busType" depart="540.00">
+        <routeDistribution last="0">
+            <route cost="79.53" probability="1.00000000" edges="505 -505 517 -588 -325 -117 119 332 592"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="28" type="busType" depart="560.00">
+        <routeDistribution last="0">
+            <route cost="102.04" probability="1.00000000" edges="-684 -597 -505 -338 -123 -19 25 128 383 579 614"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="29" type="busType" depart="580.00">
+        <routeDistribution last="0">
+            <route cost="57.32" probability="1.00000000" edges="-679 -7 9 19 -19"/>
+        </routeDistribution>
+    </vehicle>
+</routes>

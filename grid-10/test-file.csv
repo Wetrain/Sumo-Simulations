@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Sat  1 Apr 18:33:48 2017 by SUMO gui Version 0.28.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumo-gui.exeConfiguration.xsd">
+
+    <input>
+        <net-file value="grid-1.net.xml"/>
+        <route-files value="busroutes.rou.xml,carroutes.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="test-file.csv"/>
+    </output>
+
+    <report>
+        <verbose value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <traci_server>
+        <remote-port value="50452"/>
+    </traci_server>
+
+    <random_number>
+        <seed value="1"/>
+    </random_number>
+
+</configuration>
